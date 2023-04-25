@@ -1,0 +1,543 @@
+@use './colors' as color;
+@use './animate' as animation;
+
+*,
+*::before,
+::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-padding-top: 82px;
+}
+
+body {
+	font-family: 'Montserrat', sans-serif;
+	background-color: #485461;
+	background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+}
+
+.underline {
+	margin: 0 auto 20px;
+	// margin-bottom: 20px;
+	width: 120px;
+	height: 4px;
+	background-color: color.$main-color;
+}
+
+h2 {
+	text-align: center;
+	text-transform: uppercase;
+}
+
+/*
+! NAWIGACJA
+*/
+
+.shadow-bg {
+	background-color: rgba($color: #000000, $alpha: 0.8);
+	z-index: 2;
+}
+
+#navbar {
+	
+	.navbar-brand {
+		color: #fff;
+		font-weight: bold;
+
+		p {
+			font-weight: normal;
+		}
+		&:hover {
+			color: color.$main-color;
+		}
+	}
+
+	.active {
+		color: color.$main-color;
+	}
+}
+
+nav {
+	width: 100%;
+	text-transform: uppercase;
+	z-index: 2;
+	transition: background-color 0.6s;
+
+	.nav-link {
+		color: #fff;
+		transition: color 0.3s;
+
+		&:hover {
+			color: color.$main-color;
+		}
+	}
+
+	.active {
+		color: color.$main-color;
+	}
+
+	.navbar-toggler {
+		color: #fff;
+		border: 1px solid #fff;
+	}
+
+	i {
+		padding: 8px 4px;
+		font-size: 24px;
+		color: #fff;
+	}
+}
+
+/*
+! HEADER
+*/
+
+.header {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-image: url('../img/header3.JPG');
+	height: 100vh;
+	background-size: cover;
+	background-position-x: center;
+	background-position-y: bottom;
+
+	.hero-text {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: #fff;
+		text-transform: uppercase;
+		z-index: 1;
+		h1,
+		p {
+			font-weight: bold;
+		}
+		h1 {
+			font-size: 20px;
+		}
+		p {
+			font-size: 14px;
+		}
+		.btn-outline-light {
+			text-transform: uppercase;
+			font-size: 12px;
+		}
+	}
+
+	.hero-bg {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.6);
+	}
+
+	.chevy {
+		position: absolute;
+		bottom: 20px;
+
+		.fa-solid {
+			font-size: 35px;
+			color: #ddd;
+			z-index: 2;
+		}
+	}
+}
+
+/*
+!ABOUTUS
+*/
+.about-us {
+	margin-top: 200px;
+
+	i {
+		margin-top: 20px;
+		font-size: 30px;
+	}
+
+	.aboutus-card-title {
+		font-size: 18px;
+		text-transform: uppercase;
+	}
+
+	.aboutus-card-text {
+		font-size: 14px;
+	}
+
+	.aboutus-hover {
+		border-radius: 5px;
+		transition: color 0.3s, background-image 0.3s, box-shadow 1s, border-radius 1s;
+	}
+
+	.aboutus-hover:hover {
+		color: color.$main-color;
+	}
+}
+
+/*
+!TUNING
+*/
+
+.tuning {
+	position: relative;
+	margin-top: 200px;
+	background-image: url('../img/bmw-white.jpg');
+	background-position: center;
+
+	height: 900px;
+	color: #fff;
+
+	.first {
+		margin-top: 50px;
+	}
+
+	.second {
+		margin-top: 50px;
+	}
+
+	.tuning-card-title {
+		font-size: 16px;
+		text-transform: uppercase;
+	}
+
+	.tuning-text {
+		font-size: 12px;
+	}
+
+	.tuning-bgc {
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		background-color: rgba($color: #000000, $alpha: 0.4);
+	}
+}
+
+/*
+!SERVICES
+*/
+
+.services {
+	margin-top: 200px;
+
+	.card {
+		margin: 10px 10px;
+	}
+}
+
+/*
+!PRICES
+*/
+
+.prices {
+	margin-top: 200px;
+
+	.wrap {
+		display: flex;
+		justify-content: center;
+		flex-wrap: wrap;
+
+		.card {
+			padding: 10px;
+			margin: 20px 10px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-around;
+			text-align: center;
+			width: 300px;
+			height: 500px;
+			background-color: white;
+			transition: box-shadow 0.3s, scale 0.3s;
+
+			&:hover {
+				box-shadow: 0 0 25px #000000;
+				scale: 1.05;
+			}
+
+			h3 {
+				text-transform: uppercase;
+			}
+
+			.price {
+				text-transform: uppercase;
+				font-weight: bold;
+			}
+
+			p {
+				text-transform: capitalize;
+			}
+		}
+	}
+}
+
+/*
+!TEAM
+*/
+
+.team {
+	margin-top: 200px;
+
+	.container-fluid {
+		position: relative;
+		background-image: url(../img/workshop-1.jpg);
+		background-attachment: fixed;
+		background-size: cover;
+
+		.bgc-shadow {
+			position: absolute;
+			left: 0;
+			right: 0;
+			height: 100%;
+			width: 100%;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+		}
+
+		h2 {
+			position: relative;
+			color: white;
+			z-index: 1;
+		}
+		.underline {
+			position: relative;
+			z-index: 1;
+		}
+
+		.card {
+			margin: 0 10px;
+
+			img {
+				height: 400px;
+				object-fit: cover;
+			}
+
+			transition: scale 0.3s;
+			&:hover {
+				scale: 0.9;
+			}
+		}
+	}
+
+	.card-body {
+		text-align: center;
+
+		.card-title {
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+	}
+
+	.card-footer {
+		.text-body-secondary {
+			display: flex;
+			justify-content: space-evenly;
+			font-size: 25px;
+
+			a {
+				color: #000000;
+				transition: color 0.3s;
+
+				&:hover {
+					color: color.$main-color;
+				}
+			}
+		}
+	}
+}
+
+/* 
+!CONTACT
+*/
+
+.contact {
+	margin-top: 200px;
+
+	.social-media {
+		a {
+			margin: 0 10px;
+			font-size: 30px;
+		}
+	}
+}
+
+/*
+!MEDIA
+*/
+
+@media (min-width: 992px) {
+	html {
+		scroll-padding-top: 72px;
+	}
+
+	.tuning {
+		height: 700px;
+
+		.first {
+			margin-top: 100px;
+		}
+
+		.second {
+			margin-top: 100px;
+		}
+	}
+
+	.services {
+		margin-top: 200px;
+
+		.carousel-item {
+			height: 600px;
+		}
+
+		.carousel-indicators {
+			padding-bottom: 130px;
+		}
+
+		.carousel-caption {
+			position: absolute;
+			bottom: 140px;
+			left: 0;
+			right: 0;
+			background-color: rgba($color: #000000, $alpha: 0.4);
+		}
+	}
+}
+
+@media (min-width: 576px) {
+	.header {
+		background-image: url('../img/header3.JPG');
+		background-attachment: fixed;
+		background-size: cover;
+		background-position: center;
+		.hero-text {
+			h1 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 22px;
+			}
+			.btn-outline-light {
+				font-size: 18px;
+			}
+		}
+	}
+	.chevy {
+		position: absolute;
+		bottom: 20px;
+
+		.fa-solid {
+			font-size: 60px;
+			color: #ddd;
+			z-index: 2;
+		}
+	}
+
+	.tuning {
+		background-attachment: fixed;
+		margin-top: 200px;
+
+		.first {
+			margin-top: 50px;
+		}
+
+		.second {
+			margin-top: 100px;
+		}
+
+		.tuning-card-title {
+			font-size: 18px;
+		}
+
+		.tuning-text {
+			font-size: 14px;
+		}
+	}
+
+	.services {
+		.carousel-item {
+			img {
+				width: 800px;
+				height: 500px;
+			}
+		}
+	}
+}
+
+/*
+!LOADER
+*/
+
+#preloader {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #333;
+	z-index: 100;
+}
+#loader {
+	display: block;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	width: 150px;
+	height: 150px;
+	margin: -75px 0 0 -75px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #81c4ff;
+	-webkit-animation: spin 2s linear infinite;
+	animation: spin 2s linear infinite;
+}
+#loader:before {
+	content: '';
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	right: 5px;
+	bottom: 5px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #16588e;
+	-webkit-animation: spin 3s linear infinite;
+	animation: spin 3s linear infinite;
+}
+#loader:after {
+	content: '';
+	position: absolute;
+	top: 15px;
+	left: 15px;
+	right: 15px;
+	bottom: 15px;
+	border-radius: 50%;
+	border: 3px solid transparent;
+	border-top-color: #e7222e;
+	-webkit-animation: spin 1.5s linear infinite;
+	animation: spin 1.5s linear infinite;
+}
+@-webkit-keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+@keyframes spin {
+	0% {
+		-webkit-transform: rotate(0deg);
+		-ms-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+	100% {
+		-webkit-transform: rotate(360deg);
+		-ms-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
